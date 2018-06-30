@@ -62,9 +62,9 @@ namespace PracticeWinForm
 
 		private void btnParseJSON_Click(object sender, EventArgs e)
 		{
-			if (NewCustomer != null)
+			if (SaveCustomer != null)
 			{
-				NewCustomer(this, EventArgs.Empty);
+				SaveCustomer(this, EventArgs.Empty);
 			}
 		}
 

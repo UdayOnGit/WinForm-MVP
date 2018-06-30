@@ -8,6 +8,7 @@ namespace PracticeWinForm
 		public CustomerPresenter(ICustomer customer)
 		{
 			view = customer;
+			Initialize();
 		}
 
 		void Initialize()
@@ -29,12 +30,11 @@ namespace PracticeWinForm
 			else
 			{
 				customer = customers[currentIndex];
+				customer.CustomerName = view.CustomerName;
+				customer.DOB = view.DOB;
+				customer.Address = view.Address;
+				customer.PhoneNumber = view.PhoneNumber;
 			}
-
-			customer.CustomerName = view.CustomerName;
-			customer.DOB = view.DOB;
-			customer.Address = view.Address;
-			customer.PhoneNumber = view.PhoneNumber;
 
 			if (isNew)
 			{

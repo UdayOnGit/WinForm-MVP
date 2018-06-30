@@ -30,19 +30,23 @@
 		{
 			this.label1 = new System.Windows.Forms.Label();
 			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.button1 = new System.Windows.Forms.Button();
+			this.btnSave = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
+			this.lblAddress = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
+			this.btnPrevious = new System.Windows.Forms.Button();
+			this.btnNext = new System.Windows.Forms.Button();
+			this.txtName = new System.Windows.Forms.TextBox();
+			this.dtDOB = new System.Windows.Forms.DateTimePicker();
+			this.txtAddress = new System.Windows.Forms.TextBox();
+			this.txtPhone = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(109, 37);
+			this.label1.Location = new System.Drawing.Point(74, 37);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(113, 17);
 			this.label1.TabIndex = 0;
@@ -50,29 +54,30 @@
 			// 
 			// textBox1
 			// 
-			this.textBox1.Location = new System.Drawing.Point(228, 37);
+			this.textBox1.Location = new System.Drawing.Point(193, 37);
 			this.textBox1.Multiline = true;
 			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(100, 22);
+			this.textBox1.Size = new System.Drawing.Size(651, 66);
 			this.textBox1.TabIndex = 1;
 			// 
-			// button1
+			// btnSave
 			// 
-			this.button1.Location = new System.Drawing.Point(182, 109);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 2;
-			this.button1.Text = "button1";
-			this.button1.UseVisualStyleBackColor = true;
+			this.btnSave.Location = new System.Drawing.Point(193, 109);
+			this.btnSave.Name = "btnSave";
+			this.btnSave.Size = new System.Drawing.Size(75, 23);
+			this.btnSave.TabIndex = 2;
+			this.btnSave.Text = "button1";
+			this.btnSave.UseVisualStyleBackColor = true;
+			this.btnSave.Click += new System.EventHandler(this.btnParseJSON_Click);
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Location = new System.Drawing.Point(112, 151);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(46, 17);
+			this.label2.Size = new System.Drawing.Size(53, 17);
 			this.label2.TabIndex = 3;
-			this.label2.Text = "label2";
+			this.label2.Text = "Name: ";
 			// 
 			// label3
 			// 
@@ -81,16 +86,16 @@
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(46, 17);
 			this.label3.TabIndex = 4;
-			this.label3.Text = "label3";
+			this.label3.Text = "DOB: ";
 			// 
-			// label4
+			// lblAddress
 			// 
-			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(112, 240);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(46, 17);
-			this.label4.TabIndex = 5;
-			this.label4.Text = "label4";
+			this.lblAddress.AutoSize = true;
+			this.lblAddress.Location = new System.Drawing.Point(112, 240);
+			this.lblAddress.Name = "lblAddress";
+			this.lblAddress.Size = new System.Drawing.Size(68, 17);
+			this.lblAddress.TabIndex = 5;
+			this.lblAddress.Text = "Address: ";
 			// 
 			// label5
 			// 
@@ -101,34 +106,68 @@
 			this.label5.TabIndex = 6;
 			this.label5.Text = "label5";
 			// 
-			// button2
+			// btnPrevious
 			// 
-			this.button2.Location = new System.Drawing.Point(112, 344);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(75, 23);
-			this.button2.TabIndex = 7;
-			this.button2.Text = "button2";
-			this.button2.UseVisualStyleBackColor = true;
+			this.btnPrevious.Location = new System.Drawing.Point(112, 344);
+			this.btnPrevious.Name = "btnPrevious";
+			this.btnPrevious.Size = new System.Drawing.Size(75, 23);
+			this.btnPrevious.TabIndex = 7;
+			this.btnPrevious.Text = "button2";
+			this.btnPrevious.UseVisualStyleBackColor = true;
+			this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
 			// 
-			// button3
+			// btnNext
 			// 
-			this.button3.Location = new System.Drawing.Point(645, 343);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(75, 23);
-			this.button3.TabIndex = 8;
-			this.button3.Text = "button3";
-			this.button3.UseVisualStyleBackColor = true;
+			this.btnNext.Location = new System.Drawing.Point(645, 343);
+			this.btnNext.Name = "btnNext";
+			this.btnNext.Size = new System.Drawing.Size(75, 23);
+			this.btnNext.TabIndex = 8;
+			this.btnNext.Text = "button3";
+			this.btnNext.UseVisualStyleBackColor = true;
+			this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+			// 
+			// txtName
+			// 
+			this.txtName.Location = new System.Drawing.Point(193, 151);
+			this.txtName.Name = "txtName";
+			this.txtName.Size = new System.Drawing.Size(651, 22);
+			this.txtName.TabIndex = 9;
+			// 
+			// dtDOB
+			// 
+			this.dtDOB.Location = new System.Drawing.Point(193, 194);
+			this.dtDOB.Name = "dtDOB";
+			this.dtDOB.Size = new System.Drawing.Size(200, 22);
+			this.dtDOB.TabIndex = 10;
+			// 
+			// txtAddress
+			// 
+			this.txtAddress.Location = new System.Drawing.Point(193, 240);
+			this.txtAddress.Name = "txtAddress";
+			this.txtAddress.Size = new System.Drawing.Size(100, 22);
+			this.txtAddress.TabIndex = 11;
+			// 
+			// txtPhone
+			// 
+			this.txtPhone.Location = new System.Drawing.Point(193, 275);
+			this.txtPhone.Name = "txtPhone";
+			this.txtPhone.Size = new System.Drawing.Size(100, 22);
+			this.txtPhone.TabIndex = 12;
 			// 
 			// CustomerDetails
 			// 
 			this.ClientSize = new System.Drawing.Size(920, 434);
-			this.Controls.Add(this.button3);
-			this.Controls.Add(this.button2);
+			this.Controls.Add(this.txtPhone);
+			this.Controls.Add(this.txtAddress);
+			this.Controls.Add(this.dtDOB);
+			this.Controls.Add(this.txtName);
+			this.Controls.Add(this.btnNext);
+			this.Controls.Add(this.btnPrevious);
 			this.Controls.Add(this.label5);
-			this.Controls.Add(this.label4);
+			this.Controls.Add(this.lblAddress);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.btnSave);
 			this.Controls.Add(this.textBox1);
 			this.Controls.Add(this.label1);
 			this.Name = "CustomerDetails";
@@ -142,13 +181,17 @@
 
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btnSave;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Label lblAddress;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.Button btnPrevious;
+		private System.Windows.Forms.Button btnNext;
+		private System.Windows.Forms.TextBox txtName;
+		private System.Windows.Forms.DateTimePicker dtDOB;
+		private System.Windows.Forms.TextBox txtAddress;
+		private System.Windows.Forms.TextBox txtPhone;
 	}
 }
 
