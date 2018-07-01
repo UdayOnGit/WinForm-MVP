@@ -23,6 +23,11 @@ namespace PracticeWinForm
 			this.IsDirty = false;
 		}
 
+		public string CustomerJSON
+		{
+			get => txtJSON.Text;
+		}
+
 		public string CustomerName
 		{
 			get => txtName.Text;
@@ -53,6 +58,12 @@ namespace PracticeWinForm
 			set;
 		}
 
+		public bool IsNew
+		{
+			get;
+			set;
+		}
+
 		public event EventHandler<EventArgs> SaveCustomer;
 		public event EventHandler<EventArgs> NewCustomer;
 		public event EventHandler<EventArgs> PreviousCustomer;
@@ -62,6 +73,8 @@ namespace PracticeWinForm
 
 		private void btnParseJSON_Click(object sender, EventArgs e)
 		{
+			this.IsDirty = true;
+			IsNew = true;
 			if (SaveCustomer != null)
 			{
 				SaveCustomer(this, EventArgs.Empty);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace PracticeWinForm
 {
@@ -18,14 +19,20 @@ namespace PracticeWinForm
 			view.NewCustomer += New;
 			view.PreviousCustomer += Previous;
 			view.NextCustomer += Next;
+
+
 		}
 
 		void Save(object sender, EventArgs e)
 		{
 			Customer customer;
-			if (isNew)
+			if (view.IsNew)
 			{
-				customer = new Customer();
+				customer = JsonConvert.DeserializeObject<Customer>(view.CustomerJSON);
+				customers.Add(customer);
+				isNew = false;
+				currentIndex = customers.Count - 1;
+				LoadCustomer(currentIndex);
 			}
 			else
 			{
@@ -34,13 +41,6 @@ namespace PracticeWinForm
 				customer.DOB = view.DOB;
 				customer.Address = view.Address;
 				customer.PhoneNumber = view.PhoneNumber;
-			}
-
-			if (isNew)
-			{
-				customers.Add(customer);
-				isNew = false;
-				currentIndex = customers.Count - 1;
 			}
 
 			view.IsDirty = false;

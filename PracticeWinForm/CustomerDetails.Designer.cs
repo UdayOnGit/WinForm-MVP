@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.label1 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.txtJSON = new System.Windows.Forms.TextBox();
 			this.btnSave = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
@@ -52,13 +52,13 @@
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Customer JSON:";
 			// 
-			// textBox1
+			// txtJSON
 			// 
-			this.textBox1.Location = new System.Drawing.Point(193, 37);
-			this.textBox1.Multiline = true;
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(651, 66);
-			this.textBox1.TabIndex = 1;
+			this.txtJSON.Location = new System.Drawing.Point(193, 37);
+			this.txtJSON.Multiline = true;
+			this.txtJSON.Name = "txtJSON";
+			this.txtJSON.Size = new System.Drawing.Size(651, 66);
+			this.txtJSON.TabIndex = 1;
 			// 
 			// btnSave
 			// 
@@ -66,14 +66,14 @@
 			this.btnSave.Name = "btnSave";
 			this.btnSave.Size = new System.Drawing.Size(75, 23);
 			this.btnSave.TabIndex = 2;
-			this.btnSave.Text = "button1";
+			this.btnSave.Text = "Save";
 			this.btnSave.UseVisualStyleBackColor = true;
 			this.btnSave.Click += new System.EventHandler(this.btnParseJSON_Click);
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(112, 151);
+			this.label2.Location = new System.Drawing.Point(74, 151);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(53, 17);
 			this.label2.TabIndex = 3;
@@ -82,7 +82,7 @@
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(112, 194);
+			this.label3.Location = new System.Drawing.Point(74, 194);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(46, 17);
 			this.label3.TabIndex = 4;
@@ -91,7 +91,7 @@
 			// lblAddress
 			// 
 			this.lblAddress.AutoSize = true;
-			this.lblAddress.Location = new System.Drawing.Point(112, 240);
+			this.lblAddress.Location = new System.Drawing.Point(74, 240);
 			this.lblAddress.Name = "lblAddress";
 			this.lblAddress.Size = new System.Drawing.Size(68, 17);
 			this.lblAddress.TabIndex = 5;
@@ -100,29 +100,29 @@
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(115, 275);
+			this.label5.Location = new System.Drawing.Point(74, 275);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(46, 17);
+			this.label5.Size = new System.Drawing.Size(107, 17);
 			this.label5.TabIndex = 6;
-			this.label5.Text = "label5";
+			this.label5.Text = "Phone Number:";
 			// 
 			// btnPrevious
 			// 
-			this.btnPrevious.Location = new System.Drawing.Point(112, 344);
+			this.btnPrevious.Location = new System.Drawing.Point(77, 344);
 			this.btnPrevious.Name = "btnPrevious";
 			this.btnPrevious.Size = new System.Drawing.Size(75, 23);
 			this.btnPrevious.TabIndex = 7;
-			this.btnPrevious.Text = "button2";
+			this.btnPrevious.Text = "Previous";
 			this.btnPrevious.UseVisualStyleBackColor = true;
 			this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
 			// 
 			// btnNext
 			// 
-			this.btnNext.Location = new System.Drawing.Point(645, 343);
+			this.btnNext.Location = new System.Drawing.Point(769, 344);
 			this.btnNext.Name = "btnNext";
 			this.btnNext.Size = new System.Drawing.Size(75, 23);
 			this.btnNext.TabIndex = 8;
-			this.btnNext.Text = "button3";
+			this.btnNext.Text = "Next";
 			this.btnNext.UseVisualStyleBackColor = true;
 			this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
 			// 
@@ -144,19 +144,19 @@
 			// 
 			this.txtAddress.Location = new System.Drawing.Point(193, 240);
 			this.txtAddress.Name = "txtAddress";
-			this.txtAddress.Size = new System.Drawing.Size(100, 22);
+			this.txtAddress.Size = new System.Drawing.Size(651, 22);
 			this.txtAddress.TabIndex = 11;
 			// 
 			// txtPhone
 			// 
 			this.txtPhone.Location = new System.Drawing.Point(193, 275);
 			this.txtPhone.Name = "txtPhone";
-			this.txtPhone.Size = new System.Drawing.Size(100, 22);
+			this.txtPhone.Size = new System.Drawing.Size(651, 22);
 			this.txtPhone.TabIndex = 12;
 			// 
 			// CustomerDetails
 			// 
-			this.ClientSize = new System.Drawing.Size(920, 434);
+			this.ClientSize = new System.Drawing.Size(920, 396);
 			this.Controls.Add(this.txtPhone);
 			this.Controls.Add(this.txtAddress);
 			this.Controls.Add(this.dtDOB);
@@ -168,7 +168,7 @@
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.btnSave);
-			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.txtJSON);
 			this.Controls.Add(this.label1);
 			this.Name = "CustomerDetails";
 			this.Load += new System.EventHandler(this.CustomerDetails_Load);
@@ -180,7 +180,7 @@
 		#endregion
 
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox txtJSON;
 		private System.Windows.Forms.Button btnSave;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;

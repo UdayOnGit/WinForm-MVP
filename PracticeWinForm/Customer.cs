@@ -18,6 +18,10 @@ namespace PracticeWinForm
 
 		bool IsDirty { get; set; }
 
+		string CustomerJSON { get; }
+
+		bool IsNew { get; set; }
+
 		event EventHandler<EventArgs> SaveCustomer;
 
 		event EventHandler<EventArgs> NewCustomer;
